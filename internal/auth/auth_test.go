@@ -37,7 +37,7 @@ func TestGetAPIKey(t *testing.T) {
 			gotValue, gotErr := GetAPIKey(tc.input)
 			diff := cmp.Diff(gotValue, tc.expVal)
 			if diff != "" {
-				t.Fatalf(diff)
+				t.Fatal(diff)
 			}
 
 			if gotErr == nil {
@@ -49,7 +49,7 @@ func TestGetAPIKey(t *testing.T) {
 
 			diff = cmp.Diff(gotErr.Error(), tc.expErr)
 			if diff != "" {
-				t.Fatalf(diff)
+				t.Fatal(diff)
 			}
 		})
 	}
